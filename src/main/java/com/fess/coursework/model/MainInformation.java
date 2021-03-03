@@ -21,4 +21,5 @@ public class MainInformation {
     private String phone;
     private String email;
     private String github;
+    private String additionalInformation;
 }

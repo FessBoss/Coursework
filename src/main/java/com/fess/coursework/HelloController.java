@@ -21,6 +21,6 @@ public class HelloController {
     @PostMapping("/create")
     public String create(@ModelAttribute("MainInformation") MainInformation mainInformation) {
         System.out.println(mainInformation);
-        return "redirect:/";
+        return "index";
     }
 }
