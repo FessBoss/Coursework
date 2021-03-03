@@ -94,24 +94,52 @@
 <!--        </div>-->
 <!--    </div>-->
 
-<!--    <div class="row justify-content-md-center">-->
-<!--        <div class="col-md-6 col-xl-5 mt-5">-->
-<!--            <div class="card">-->
-<!--                <div class="card-header">-->
-<!--                    Знание языков-->
-<!--                </div>-->
-<!--                <div class="card-body">-->
-<!--                    <form>-->
-<!--                        <row>-->
-<!--                            <div class="form-group col-md-7">-->
-<!--                                <input class="form-control" type="text" placeholder="Фамилия">-->
-<!--                            </div>-->
-<!--                        </row>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 col-xl-5 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    Знание языков
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="inputFormRow">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="title[]" class="form-control m-input" placeholder="Enter title" autocomplete="off">
+                                    <div class="input-group-append">
+                                        <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="newRow"></div>
+                            <button id="addRow" type="button" class="btn btn-info">Add Row</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // add row
+        $("#addRow").click(function () {
+            var html = '';
+            html += '<div id="inputFormRow">';
+            html += '<div class="input-group mb-3">';
+            html += '<input type="text" name="title[]" class="form-control m-input" placeholder="Enter title" autocomplete="off">';
+            html += '<div class="input-group-append">';
+            html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';
+            html += '</div>';
+            html += '</div>';
+
+            $('#newRow').append(html);
+        });
+
+        // remove row
+        $(document).on('click', '#removeRow', function () {
+            $(this).closest('#inputFormRow').remove();
+        });
+    </script>
 
     <div class="row justify-content-md-center">
         <div class="col-md-6 col-xl-5 mt-5 mb-5">
