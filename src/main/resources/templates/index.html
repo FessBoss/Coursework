@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Getting Started: Serving Web Content</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/jquery-3.5.1.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
 </head>
 <body>
-<h1>Hello!</h1>
-<div th:text="${message}">Text</div>
+<div th:replace="~{fragments/navbar::navbar}"></div>
+
+
+<div class="row justify-content-md-center">
+    <div class="col-md-6 col-xl-5 mt-5">
+        <div class="card">
+            <div class="card-header">
+                Основная информация
+            </div>
+            <div class="card-body">
+                <form>
+                    <row>
+                        <div class="form-group col-md-7">
+                            <input class="form-control" type="text" placeholder="Фамилия">
+                            <input class="form-control mt-2" type="text" placeholder="Имя">
+                            <input class="form-control mt-2" type="text" placeholder="Желаемая должность">
+                            <input class="form-control mt-2" type="text" placeholder="Телефон">
+                            <input class="form-control mt-2" type="text" placeholder="Email">
+                            <input class="form-control mt-2" type="text" placeholder="Github">
+                        </div>
+                    </row>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-6 col-xl-5 mt-5">
+        <div class="card">
+            <div class="card-header">
+                Навыки
+            </div>
+            <div class="card-body">
+                <form>
+                    <row>
+                        <div class="form-group col-md-7">
+                            <input class="form-control" type="text" placeholder="Фамилия">
+                        </div>
+                    </row>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-6 col-xl-5 mt-5">
+        <div class="card">
+            <div class="card-header">
+                Опыт работы
+            </div>
+            <div class="card-body">
+                <form>
+                    <row>
+                        <div class="form-group col-md-7">
+                            <input class="form-control" type="text" placeholder="Фамилия">
+                        </div>
+                    </row>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-6 col-xl-5 mt-5">
+        <div class="card">
+            <div class="card-header">
+                Образование
+            </div>
+            <div class="card-body">
+                <form>
+                    <row>
+                        <div class="form-group col-md-7">
+                            <input class="form-control" type="text" placeholder="Фамилия">
+                        </div>
+                    </row>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-6 col-xl-5 mt-5">
+        <div class="card">
+            <div class="card-header">
+                Знание языков
+            </div>
+            <div class="card-body">
+                <form>
+                    <row>
+                        <div class="form-group col-md-7">
+                            <input class="form-control" type="text" placeholder="Фамилия">
+                        </div>
+                    </row>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-6 col-xl-5 mt-5 mb-5">
+        <div class="card">
+            <div class="card-header">
+                Дополнительная информация
+            </div>
+            <div class="card-body">
+                <form>
+                    <row>
+                        <div class="form-group col-md-7">
+                            <input class="form-control" type="text" placeholder="Фамилия">
+                        </div>
+                    </row>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
