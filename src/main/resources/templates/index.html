@@ -9,124 +9,129 @@
 <body>
 <div th:replace="~{fragments/navbar::navbar}"></div>
 
-
-<div class="row justify-content-md-center">
-    <div class="col-md-6 col-xl-5 mt-5">
-        <div class="card">
-            <div class="card-header">
-                Основная информация
-            </div>
-            <div class="card-body">
-                <form>
+<form th:method="POST" th:action="@{/create}" th:object="${MainInformation}">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 col-xl-5 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    Основная информация
+                </div>
+                <div class="card-body">
                     <row>
                         <div class="form-group col-md-7">
-                            <input class="form-control" type="text" placeholder="Фамилия">
-                            <input class="form-control mt-2" type="text" placeholder="Имя">
-                            <input class="form-control mt-2" type="text" placeholder="Желаемая должность">
-                            <input class="form-control mt-2" type="text" placeholder="Телефон">
-                            <input class="form-control mt-2" type="text" placeholder="Email">
-                            <input class="form-control mt-2" type="text" placeholder="Github">
+                            <input type="text" th:field="*{lastname}"
+                                   class="form-control" placeholder="Фамилия">
+                            <input type="text" th:field="*{firstname}"
+                                   class="form-control mt-2" placeholder="Имя">
+                            <input type="text" th:field="*{position}"
+                                   class="form-control mt-2" placeholder="Желаемая должность">
+                            <input type="text" th:field="*{phone}"
+                                   class="form-control mt-2" placeholder="Телефон">
+                            <input type="text" th:field="*{email}"
+                                   class="form-control mt-2" placeholder="Email">
+                            <input type="text" th:field="*{github}"
+                                   class="form-control mt-2" placeholder="Github">
                         </div>
                     </row>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="row justify-content-md-center">
-    <div class="col-md-6 col-xl-5 mt-5">
-        <div class="card">
-            <div class="card-header">
-                Навыки
-            </div>
-            <div class="card-body">
-                <form>
-                    <row>
-                        <div class="form-group col-md-7">
-                            <input class="form-control" type="text" placeholder="Фамилия">
-                        </div>
-                    </row>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<!--    <div class="row justify-content-md-center">-->
+<!--        <div class="col-md-6 col-xl-5 mt-5">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    Навыки-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <form>-->
+<!--                        <row>-->
+<!--                            <div class="form-group col-md-7">-->
+<!--                                <input class="form-control" type="text" placeholder="Фамилия">-->
+<!--                            </div>-->
+<!--                        </row>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-<div class="row justify-content-md-center">
-    <div class="col-md-6 col-xl-5 mt-5">
-        <div class="card">
-            <div class="card-header">
-                Опыт работы
-            </div>
-            <div class="card-body">
-                <form>
-                    <row>
-                        <div class="form-group col-md-7">
-                            <input class="form-control" type="text" placeholder="Фамилия">
-                        </div>
-                    </row>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<!--    <div class="row justify-content-md-center">-->
+<!--        <div class="col-md-6 col-xl-5 mt-5">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    Опыт работы-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <form>-->
+<!--                        <row>-->
+<!--                            <input type="date" class="form-control" id="date1" name="date" placeholder="Дата" required>-->
+<!--                            <input type="date" class="form-control" id="date2" name="date" placeholder="Дата" required>-->
+<!--                        </row>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-<div class="row justify-content-md-center">
-    <div class="col-md-6 col-xl-5 mt-5">
-        <div class="card">
-            <div class="card-header">
-                Образование
-            </div>
-            <div class="card-body">
-                <form>
-                    <row>
-                        <div class="form-group col-md-7">
-                            <input class="form-control" type="text" placeholder="Фамилия">
-                        </div>
-                    </row>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<!--    <div class="row justify-content-md-center">-->
+<!--        <div class="col-md-6 col-xl-5 mt-5">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    Образование-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <form>-->
+<!--                        <row>-->
+<!--                            <div class="form-group col-md-7">-->
+<!--                                <input class="form-control" type="text" placeholder="Фамилия">-->
+<!--                            </div>-->
+<!--                        </row>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-<div class="row justify-content-md-center">
-    <div class="col-md-6 col-xl-5 mt-5">
-        <div class="card">
-            <div class="card-header">
-                Знание языков
-            </div>
-            <div class="card-body">
-                <form>
-                    <row>
-                        <div class="form-group col-md-7">
-                            <input class="form-control" type="text" placeholder="Фамилия">
-                        </div>
-                    </row>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<!--    <div class="row justify-content-md-center">-->
+<!--        <div class="col-md-6 col-xl-5 mt-5">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    Знание языков-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <form>-->
+<!--                        <row>-->
+<!--                            <div class="form-group col-md-7">-->
+<!--                                <input class="form-control" type="text" placeholder="Фамилия">-->
+<!--                            </div>-->
+<!--                        </row>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-<div class="row justify-content-md-center">
-    <div class="col-md-6 col-xl-5 mt-5 mb-5">
-        <div class="card">
-            <div class="card-header">
-                Дополнительная информация
-            </div>
-            <div class="card-body">
-                <form>
-                    <row>
-                        <div class="form-group col-md-7">
-                            <input class="form-control" type="text" placeholder="Фамилия">
-                        </div>
-                    </row>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+<!--    <div class="row justify-content-md-center">-->
+<!--        <div class="col-md-6 col-xl-5 mt-5 mb-5">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    Дополнительная информация-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <form>-->
+<!--                        <row>-->
+<!--                            <div class="form-group col-md-7">-->
+<!--                                <input class="form-control" type="text" placeholder="Фамилия">-->
+<!--                            </div>-->
+<!--                        </row>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <input type="submit" >
+</form>
 </body>
 </html>
