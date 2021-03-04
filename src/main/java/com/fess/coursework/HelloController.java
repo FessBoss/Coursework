@@ -20,7 +20,13 @@ public class HelloController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute("MainInformation") MainInformation mainInformation,
-                         @RequestParam("languages[]") String languages) {
+                         @RequestParam("languages[]") String languages,
+                         @RequestParam("university") String university,
+                         @RequestParam("startStudy[]") String startStudy,
+                         @RequestParam("endStudy[]") String endStudy) {
+        System.out.println(startStudy);
+        System.out.println(endStudy);
+        System.out.println(university);
         System.out.println(languages);
         System.out.println(mainInformation);
         return "index";
