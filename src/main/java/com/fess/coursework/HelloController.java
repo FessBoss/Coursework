@@ -2,7 +2,6 @@ package com.fess.coursework;
 
 import com.fess.coursework.model.MainInformation;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +20,8 @@ public class HelloController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute("MainInformation") MainInformation mainInformation,
-                         @RequestParam("title[]") String title) {
-        System.out.println(title);
+                         @RequestParam("languages[]") String languages) {
+        System.out.println(languages);
         System.out.println(mainInformation);
         return "index";
     }
