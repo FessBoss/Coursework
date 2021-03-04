@@ -18,7 +18,7 @@ $(document).on('click', '#addRowExperience', function () {
     html += '<textarea name="responsibility" class="form-control mt-2" placeholder="Должностные обязанности"></textarea>';
     html += '</div>';
     html += '<div class="mt-1 mb-2">';
-    html += '<button id="removeRowExperience" type="button" class="btn btn-danger">Remove</button>';
+    html += '<button id="removeRowExperience" type="button" class="btn btn-danger">Удалить</button>';
     html += '</div>';
     html += '</div>';
 

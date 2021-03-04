@@ -63,6 +63,7 @@
     <!--        </div>-->
     <!--    </div>-->
 
+    <!-- ОПЫТ РАБОТЫ -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 col-xl-5 mt-5">
             <div class="card">
@@ -87,7 +88,7 @@
                             <textarea name="responsibility" class="form-control mt-2" placeholder="Должностные обязанности"></textarea>
                         </div>
                         <div class="mt-1 mb-2">
-                            <button id="removeRowExperience" type="button" class="btn btn-danger">Remove</button>
+                            <button id="removeRowExperience" type="button" class="btn btn-danger">Удалить</button>
                         </div>
                     </div>
                     <div id="newRowExperience"></div>
@@ -171,7 +172,7 @@
                                 <option value="2023">2022</option>
                                 <option value="2024">2022</option>
                             </select>
-                            <button id="removeRowEducation" type="button" class="btn btn-danger">Remove</button>
+                            <button id="removeRowEducation" type="button" class="btn btn-danger">Удалить</button>
                         </div>
                     </div>
                     <div id="newRowEducation"></div>
@@ -204,8 +205,7 @@
                                         <option value="English (Beginner)">English (Beginner)</option>
                                     </select>
                                     <div class="input-group-append">
-                                        <button id="removeRowLanguages" type="button" class="btn btn-danger">Remove
-                                        </button>
+                                        <button id="removeRowLanguages" type="button" class="btn btn-danger">Удалить</button>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@
 
     <!-- ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ -->
     <div class="row justify-content-md-center">
-        <div class="col-md-6 col-xl-5 mt-5 mb-5">
+        <div class="col-md-6 col-xl-5 mt-5 mb-1">
             <div class="card">
                 <div class="card-header">
                     Дополнительная информация
@@ -236,7 +236,11 @@
             </div>
         </div>
     </div>
-    <input type="submit">
+    <center>
+        <div class="col-md-6 col-xl-5 mt-2 mb-5">
+            <input type="submit" class="btn btn-success btn-lg" value="Создать резюме">
+        </div>
+    </center>
 </form>
 </body>
 </html>

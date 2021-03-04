@@ -13,7 +13,7 @@ $(document).on('click', '#addRowLanguages', function () {
     html += '<option value="English (Beginner)">English (Beginner)</option>';
     html += '</select>';
     html += '<div class="input-group-append">';
-    html += '<button id="removeRowLanguages" type="button" class="btn btn-danger">Remove</button>';
+    html += '<button id="removeRowLanguages" type="button" class="btn btn-danger">Удалить</button>';
     html += '</div>';
     html += '</div>';
 

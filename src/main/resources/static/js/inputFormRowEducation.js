@@ -66,7 +66,7 @@ $(document).on('click', '#addRowEducation', function () {
     html += '<option value="2023">2022</option>';
     html += '<option value="2024">2022</option>';
     html += '</select>';
-    html += '<button id="removeRowEducation" type="button" class="btn btn-danger">Remove</button>';
+    html += '<button id="removeRowEducation" type="button" class="btn btn-danger">Удалить</button>';
     html += '</div>';
     html += '</div>';
 
