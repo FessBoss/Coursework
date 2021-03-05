@@ -1,9 +1,14 @@
-package com.fess.coursework.model;
+package com.fess.coursework.pojo;
 
+import com.fess.coursework.pojo.Education;
+import com.fess.coursework.pojo.Experience;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Eugene Mereha
@@ -21,5 +26,14 @@ public class MainInformation {
     private String phone;
     private String email;
     private String github;
+
+    private List<String> skills;
+
+    private ArrayList<Experience> experiences;
+
+    private ArrayList<Education> educations;
+
+    private ArrayList<String> languages;
+
     private String additionalInformation;
 }
