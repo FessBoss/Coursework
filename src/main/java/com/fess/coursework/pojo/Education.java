@@ -1,18 +1,12 @@
 package com.fess.coursework.pojo;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 /**
  * @author Eugene Mereha
  */
 
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
+@Data
 public class Education {
     private String university;
     private String faculty;

@@ -9,7 +9,7 @@ $(document).on('click', '#addRowEducation', function () {
     html += '</div>';
     html += '<div>';
     html += '<label class="my-1 mr-2">Год начала обучения</label>';
-    html += '<select class="custom-select my-1 mr-sm-2 col-lg-2"  name="startStudy[]">';
+    html += '<select class="custom-select my-1 mr-sm-2 col-lg-2"  name="startStudy">';
     html += '<option value="">Выбор</option>';
     html += '<option value="2000">2000</option>';
     html += '<option value="2001">2001</option>';
@@ -38,7 +38,7 @@ $(document).on('click', '#addRowEducation', function () {
     html += '<option value="2024">2022</option>';
     html += '</select>';
     html += '<label class="my-1 mr-2">Год окончания обучения</label>';
-    html += '<select class="custom-select my-1 mr-sm-2 col-lg-2" name="endStudy[]">';
+    html += '<select class="custom-select my-1 mr-sm-2 col-lg-2" name="endStudy">';
     html += '<option value="">Выбор</option>';
     html += '<option value="2000">2000</option>';
     html += '<option value="2001">2001</option>';

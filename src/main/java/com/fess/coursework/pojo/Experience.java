@@ -1,20 +1,12 @@
 package com.fess.coursework.pojo;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-import java.util.ArrayList;
+import lombok.Data;
 
 /**
  * @author Eugene Mereha
  */
 
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
+@Data
 public class Experience {
     private String dateStart;
     private String dateEnd;

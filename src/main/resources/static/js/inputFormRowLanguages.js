@@ -3,7 +3,7 @@ $(document).on('click', '#addRowLanguages', function () {
     var html = '';
     html += '<div id="inputFormRowLanguages">';
     html += '<div class="input-group mb-3">';
-    html += '<select name="languages[]" >';
+    html += '<select name="languages" >';
     html += '<option value="Русский">Русский</option>';
     html += '<option value="English (Advanced)">English (Advanced)</option>';
     html += '<option value="English (Upper-Intermediate)">English (Upper-Intermediate)</option>';
