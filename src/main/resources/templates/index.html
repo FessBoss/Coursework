@@ -16,6 +16,7 @@
 <div th:replace="~{fragments/navbar::navbar}"></div>
 
 <form th:method="POST" th:action="@{/create}" th:object="${MainInformation}">
+    <!-- Основная информация -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 col-xl-5 mt-5">
             <div class="card">
@@ -44,24 +45,19 @@
         </div>
     </div>
 
-    <!--    <div class="row justify-content-md-center">-->
-    <!--        <div class="col-md-6 col-xl-5 mt-5">-->
-    <!--            <div class="card">-->
-    <!--                <div class="card-header">-->
-    <!--                    Навыки-->
-    <!--                </div>-->
-    <!--                <div class="card-body">-->
-    <!--                    <form>-->
-    <!--                        <row>-->
-    <!--                            <div class="form-group col-md-7">-->
-    <!--                                <input class="form-control" type="text" placeholder="Фамилия">-->
-    <!--                            </div>-->
-    <!--                        </row>-->
-    <!--                    </form>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
+    <!-- Навыки -->
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 col-xl-5 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    Навыки
+                </div>
+                <div class="card-body">
+                    <textarea class="form-control" type="text" placeholder="Ключевые навыки, фреймворки, языки программирования"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ОПЫТ РАБОТЫ -->
     <div class="row justify-content-md-center">
@@ -85,7 +81,8 @@
                         <div class="form-group mt-3">
                             <input type="text" name="position" class="form-control" placeholder="Должность"/>
                             <input type="text" name="organization" class="form-control mt-2" placeholder="Организация"/>
-                            <textarea name="responsibility" class="form-control mt-2" placeholder="Должностные обязанности"></textarea>
+                            <textarea name="responsibility" class="form-control mt-2"
+                                      placeholder="Должностные обязанности"></textarea>
                         </div>
                         <div class="mt-1 mb-2">
                             <button id="removeRowExperience" type="button" class="btn btn-danger">Удалить</button>
@@ -205,7 +202,8 @@
                                         <option value="English (Beginner)">English (Beginner)</option>
                                     </select>
                                     <div class="input-group-append">
-                                        <button id="removeRowLanguages" type="button" class="btn btn-danger">Удалить</button>
+                                        <button id="removeRowLanguages" type="button" class="btn btn-danger">Удалить
+                                        </button>
                                     </div>
                                 </div>
                             </div>
