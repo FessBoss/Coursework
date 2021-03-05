@@ -15,7 +15,7 @@
 <body>
 <div th:replace="~{fragments/navbar::navbar}"></div>
 
-<form th:method="POST" th:action="@{/create}" th:object="${MainInformation}">
+<form th:method="POST" th:action="@{/create}">
     <!-- Основная информация -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 col-xl-5 mt-5">
@@ -26,17 +26,17 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-7">
-                            <input type="text" th:field="*{lastname}"
+                            <input type="text" th:field="${MainInformation.lastname}"
                                    class="form-control" placeholder="Фамилия"/>
-                            <input type="text" th:field="*{firstname}"
+                            <input type="text" th:field="${MainInformation.firstname}"
                                    class="form-control mt-2" placeholder="Имя"/>
-                            <input type="text" th:field="*{position}"
+                            <input type="text" th:field="${MainInformation.position}"
                                    class="form-control mt-2" placeholder="Желаемая должность"/>
-                            <input type="text" th:field="*{phone}"
+                            <input type="text" th:field="${MainInformation.phone}"
                                    class="form-control mt-2" placeholder="Телефон"/>
-                            <input type="text" th:field="*{email}"
+                            <input type="text" th:field="${MainInformation.email}"
                                    class="form-control mt-2" placeholder="Email"/>
-                            <input type="text" th:field="*{github}"
+                            <input type="text" th:field="${MainInformation.github}"
                                    class="form-control mt-2" placeholder="Github"/>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                     Навыки
                 </div>
                 <div class="card-body">
-                    <textarea th:field="*{skills}" class="form-control" type="text" placeholder="Ключевые навыки, фреймворки, языки программирования"></textarea>
+                    <textarea name="skills" class="form-control" type="text" placeholder="Ключевые навыки, фреймворки, языки программирования"></textarea>
                 </div>
             </div>
         </div>
@@ -71,17 +71,17 @@
                         <div class="row">
                             <div class="col-4">
                                 <label>Устроился</label>
-                                <input type="date" class="form-control" id="date1" name="dateStart" placeholder="Дата" required>
+                                <input type="date" class="form-control" id="date1" th:field="${Experience.dateStart}" placeholder="Дата" required>
                             </div>
                             <div class="col-4">
                                 <label>Уволился</label>
-                                <input type="date" class="form-control" id="date2" name="dateEnd" placeholder="Дата" required>
+                                <input type="date" class="form-control" id="date2" th:field="${Experience.dateStart}" placeholder="Дата" required>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" name="position" class="form-control" placeholder="Должность"/>
-                            <input type="text" name="organization" class="form-control mt-2" placeholder="Организация"/>
-                            <textarea name="responsibility" class="form-control mt-2"
+                            <input type="text" th:field="${Experience.position}" class="form-control" placeholder="Должность"/>
+                            <input type="text" th:field="${Experience.organization}" class="form-control mt-2" placeholder="Организация"/>
+                            <textarea th:field="${Experience.responsibility}" class="form-control mt-2"
                                       placeholder="Должностные обязанности"></textarea>
                         </div>
                         <div class="mt-1 mb-2">
@@ -105,13 +105,13 @@
                 <div class="card-body">
                     <div id="inputFormRowEducation">
                         <div class="form-group mt-3">
-                            <input type="text" name="university" class="form-control" placeholder="Учебное заведение"/>
-                            <input type="text" name="faculty" class="form-control mt-2" placeholder="Факультет"/>
-                            <input type="text" name="specialty" class="form-control mt-2" placeholder="Специальность"/>
+                            <input type="text" th:field="${Education.university}" class="form-control" placeholder="Учебное заведение"/>
+                            <input type="text" th:field="${Education.faculty}" class="form-control mt-2" placeholder="Факультет"/>
+                            <input type="text" th:field="${Education.specialty}" class="form-control mt-2" placeholder="Специальность"/>
                         </div>
                         <div>
                             <label class="my-1 mr-2" for="startStudy">Год начала обучения</label>
-                            <select class="custom-select my-1 mr-sm-2 col-lg-2" id="startStudy" name="startStudy[]">
+                            <select class="custom-select my-1 mr-sm-2 col-lg-2" id="startStudy" th:field="${Education.startStudy}">
                                 <option value="">Выбор</option>
                                 <option value="2000">2000</option>
                                 <option value="2001">2001</option>
@@ -141,7 +141,7 @@
                             </select>
 
                             <label class="my-1 mr-2" for="endStudy">Год окончания обучения</label>
-                            <select class="custom-select my-1 mr-sm-2 col-lg-2" id="endStudy" name="endStudy[]">
+                            <select class="custom-select my-1 mr-sm-2 col-lg-2" id="endStudy" th:field="${Education.endStudy}">
                                 <option value="">Выбор</option>
                                 <option value="2000">2000</option>
                                 <option value="2001">2001</option>
@@ -191,7 +191,7 @@
                         <div class="col-lg-12">
                             <div id="inputFormRowLanguages">
                                 <div class="input-group mb-3">
-                                    <select name="languages[]">
+                                    <select name="languages">
                                         <option value="Русский">Русский</option>
                                         <option value="English (Advanced)">English (Advanced)</option>
                                         <option value="English (Upper-Intermediate)">English (Upper-Intermediate)
@@ -225,10 +225,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <textarea th:field="*{additionalInformation}"
-                                  class="form-control"
-                                  placeholder="Информация, которая, возможно, заинтересует Вашего работодателя">
-                        </textarea>
+                        <textarea name="additionalInformation" class="form-control" placeholder="Информация, которая, возможно, заинтересует Вашего работодателя"></textarea>
                     </div>
                 </div>
             </div>
