@@ -13,4 +13,5 @@ public class Experience {
     private String position;
     private String organization;
     private String responsibility;
+    private boolean hasExperience = true;
 }

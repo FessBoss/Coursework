@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 public class Resume {
     private MainInformation mainInformation;
-    private List<String> skills;
+    private String skills;
     private List<Experience> experiences;
     private List<Education> educations;
     private List<String> languages;
@@ -21,7 +21,7 @@ public class Resume {
 
     public static class Builder {
         private MainInformation mainInformation;
-        private List<String> skills;
+        private String skills;
         private List<Experience> experiences = new ArrayList<>();
         private List<Education> educations = new ArrayList<>();
         private List<String> languages = new ArrayList<>();
@@ -37,33 +37,37 @@ public class Resume {
         }
 
         public Builder skills(String str) {
-            String[] words = str.split(",");
-            skills = Arrays.asList(words);
+            this.skills = str;
             return this;
         }
 
         public Builder experiences(Experience experiences) {
-            int count = experiences.getOrganization().split(",").length;
+            try {
+                int count = experiences.getOrganization().split(",").length;
+                
+                if (count == 1) {
+                    this.experiences.add(experiences);
+                } else if (count > 1) {
+                    String[] datesStart = experiences.getDateStart().split(",");
+                    String[] datesEnd = experiences.getDateEnd().split(",");
+                    String[] positions = experiences.getPosition().split(",");
+                    String[] organizations = experiences.getOrganization().split(",");
+                    String[] getResponsibilities = experiences.getResponsibility().split(",");
 
-            if (count == 1) {
-                this.experiences.add(experiences);
-            } else {
-                String[] datesStart = experiences.getDateStart().split(",");
-                String[] datesEnd = experiences.getDateEnd().split(",");
-                String[] positions = experiences.getPosition().split(",");
-                String[] organizations = experiences.getOrganization().split(",");
-                String[] getResponsibilities = experiences.getResponsibility().split(",");
+                    for (int i = 0; i < count; i++) {
+                        Experience experience = new Experience();
+                        experience.setDateStart(datesStart[i]);
+                        experience.setDateEnd(datesEnd[i]);
+                        experience.setPosition(positions[i]);
+                        experience.setOrganization(organizations[i]);
+                        experience.setResponsibility(getResponsibilities[i]);
 
-                for (int i = 0; i < count; i++) {
-                    Experience experience = new Experience();
-                    experience.setDateStart(datesStart[i]);
-                    experience.setDateEnd(datesEnd[i]);
-                    experience.setPosition(positions[i]);
-                    experience.setOrganization(organizations[i]);
-                    experience.setResponsibility(getResponsibilities[i]);
-
-                    this.experiences.add(experience);
+                        this.experiences.add(experience);
+                    }
                 }
+            } catch (NullPointerException e) {
+                experiences.setHasExperience(false);
+                this.experiences.add(experiences);
             }
 
             return this;
