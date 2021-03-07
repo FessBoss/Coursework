@@ -30,7 +30,7 @@ public class HelloController {
                          @RequestParam("skills") String skills,
                          @RequestParam("languages") String languages,
                          @RequestParam("additionalInformation") String additionalInformation) {
-        System.out.println(education);
+
         Resume resume = new Resume.Builder()
                 .mainInformation(mainInformation)
                 .skills(skills)

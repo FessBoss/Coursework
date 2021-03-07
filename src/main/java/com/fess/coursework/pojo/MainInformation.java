@@ -11,6 +11,7 @@ public class MainInformation {
     private String lastname;
     private String firstname;
     private String desiredPosition;
+    private String location;
     private String phone;
     private String email;
     private String github;
