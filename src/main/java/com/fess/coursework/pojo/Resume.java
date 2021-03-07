@@ -36,8 +36,8 @@ public class Resume {
             return this;
         }
 
-        public Builder skills(String str) {
-            this.skills = str;
+        public Builder skills(String skills) {
+            this.skills = skills;
             return this;
         }
 
@@ -67,34 +67,37 @@ public class Resume {
                 }
             } catch (NullPointerException e) {
                 experiences.setHasExperience(false);
-                this.experiences.add(experiences);
             }
 
             return this;
         }
 
         public Builder educations(Education educations) {
-            int count = educations.getUniversity().split(",").length;
+            try {
+                int count = educations.getUniversity().split(",").length;
 
-            if (count == 1) {
-                this.educations.add(educations);
-            } else {
-                String[] universities = educations.getUniversity().split(",");
-                String[] faculties = educations.getFaculty().split(",");
-                String[] specialties = educations.getSpecialty().split(",");
-                String[] startsStudy = educations.getStartStudy().split(",");
-                String[] endsStudy = educations.getEndStudy().split(",");
+                if (count == 1) {
+                    this.educations.add(educations);
+                } else {
+                    String[] universities = educations.getUniversity().split(",");
+                    String[] faculties = educations.getFaculty().split(",");
+                    String[] specialties = educations.getSpecialty().split(",");
+                    String[] startsStudy = educations.getStartStudy().split(",");
+                    String[] endsStudy = educations.getEndStudy().split(",");
 
-                for (int i = 0; i < count; i++) {
-                    Education education = new Education();
-                    education.setUniversity(universities[i]);
-                    education.setFaculty(faculties[i]);
-                    education.setSpecialty(specialties[i]);
-                    education.setStartStudy(startsStudy[i]);
-                    education.setEndStudy(endsStudy[i]);
+                    for (int i = 0; i < count; i++) {
+                        Education education = new Education();
+                        education.setUniversity(universities[i]);
+                        education.setFaculty(faculties[i]);
+                        education.setSpecialty(specialties[i]);
+                        education.setStartStudy(startsStudy[i]);
+                        education.setEndStudy(endsStudy[i]);
 
-                    this.educations.add(education);
+                        this.educations.add(education);
+                    }
                 }
+            } catch (NullPointerException e) {
+                e.printStackTrace();
             }
 
             return this;
@@ -103,7 +106,6 @@ public class Resume {
         public Builder languages(String languages) {
             String[] words = languages.split(",");
             this.languages = Arrays.asList(words);
-
             return this;
         }
 

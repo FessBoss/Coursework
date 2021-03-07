@@ -1,9 +1,6 @@
 package com.fess.coursework;
 
-import com.fess.coursework.pojo.Education;
-import com.fess.coursework.pojo.Experience;
-import com.fess.coursework.pojo.MainInformation;
-import com.fess.coursework.pojo.Resume;
+import com.fess.coursework.pojo.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,6 +36,9 @@ public class HelloController {
                 .languages(languages)
                 .additionalInformation(additionalInformation)
                 .build();
+
+        ResumeWordCreator resumeWordCreator = new ResumeWordCreator(resume);
+        resumeWordCreator.create();
 
         System.out.println(resume.getMainInformation());
         System.out.println("!==============================================================================!");
