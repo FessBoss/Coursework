@@ -28,18 +28,32 @@
                         <div class="form-group col-md-7">
                             <input type="text" th:field="${MainInformation.lastname}"
                                    class="form-control" placeholder="Фамилия"/>
+                            <div th:if="${#fields.hasErrors('MainInformation.lastname')}" th:errors="${MainInformation.lastname}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <input type="text" th:field="${MainInformation.firstname}"
                                    class="form-control mt-2" placeholder="Имя"/>
+                            <div th:if="${#fields.hasErrors('MainInformation.firstname')}" th:errors="${MainInformation.firstname}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <input type="text" th:field="${MainInformation.desiredPosition}"
                                    class="form-control mt-2" placeholder="Желаемая должность"/>
+                            <div th:if="${#fields.hasErrors('MainInformation.desiredPosition')}" th:errors="${MainInformation.desiredPosition}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <input type="text" th:field="${MainInformation.location}"
                                    class="form-control mt-2" placeholder="Город проживания"/>
+                            <div th:if="${#fields.hasErrors('MainInformation.desiredPosition')}" th:errors="${MainInformation.desiredPosition}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <input type="text" th:field="${MainInformation.phone}"
                                    class="form-control mt-2" placeholder="Телефон"/>
+                            <div th:if="${#fields.hasErrors('MainInformation.phone')}" th:errors="${MainInformation.phone}"
+                                 class="alert alert-danger mt-1" role="alert"></div>
                             <input type="text" th:field="${MainInformation.email}"
                                    class="form-control mt-2" placeholder="Email"/>
+                            <div th:if="${#fields.hasErrors('MainInformation.email')}" th:errors="${MainInformation.email}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <input type="text" th:field="${MainInformation.github}"
                                    class="form-control mt-2" placeholder="Github"/>
+                            <div th:if="${#fields.hasErrors('MainInformation.github')}" th:errors="${MainInformation.github}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                         </div>
                     </div>
                 </div>

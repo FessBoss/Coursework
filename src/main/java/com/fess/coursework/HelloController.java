@@ -2,10 +2,13 @@ package com.fess.coursework;
 
 import com.fess.coursework.pojo.*;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.validation.Valid;
 
 /**
  * @author Eugene Mereha
@@ -21,12 +24,17 @@ public class HelloController {
     }
 
     @PostMapping("/create")
-    public String create(@ModelAttribute("MainInformation") MainInformation mainInformation,
+    public String create(@ModelAttribute("MainInformation") @Valid MainInformation mainInformation,
+                         BindingResult bindingResult,
                          @ModelAttribute("Experience") Experience experience,
                          @ModelAttribute("Education") Education education,
                          @RequestParam("skills") String skills,
                          @RequestParam("languages") String languages,
                          @RequestParam("additionalInformation") String additionalInformation) {
+
+        if (bindingResult.hasErrors()) {
+            return "index";
+        }
 
         Resume resume = new Resume.Builder()
                 .mainInformation(mainInformation)
