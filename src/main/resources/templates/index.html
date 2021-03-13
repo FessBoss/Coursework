@@ -70,6 +70,8 @@
                 </div>
                 <div class="card-body">
                     <textarea name="skills" class="form-control" type="text" placeholder="Ключевые навыки, фреймворки, языки программирования"></textarea>
+                    <div th:if="${skillsError}" th:text="${skillsError}"
+                         class="alert alert-danger mt-2" role="alert"></div>
                 </div>
             </div>
         </div>
@@ -87,11 +89,11 @@
                         <div class="row">
                             <div class="col-4">
                                 <label>Устроился</label>
-                                <input type="date" class="form-control" id="date1" th:field="${Experience.dateStart}" placeholder="Дата" required>
+                                <input type="date" class="form-control" id="date1" th:field="${Experience.dateStart}" placeholder="Дата">
                             </div>
                             <div class="col-4">
                                 <label>Уволился</label>
-                                <input type="date" class="form-control" id="date2" th:field="${Experience.dateEnd}" placeholder="Дата" required>
+                                <input type="date" class="form-control" id="date2" th:field="${Experience.dateEnd}" placeholder="Дата">
                             </div>
                         </div>
                         <div class="form-group mt-3">

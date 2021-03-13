@@ -2,6 +2,7 @@ package com.fess.coursework;
 
 import com.fess.coursework.pojo.*;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,14 +26,18 @@ public class HelloController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute("MainInformation") @Valid MainInformation mainInformation,
-                         BindingResult bindingResult,
+                         BindingResult bindingResultMainInformation,
                          @ModelAttribute("Experience") Experience experience,
                          @ModelAttribute("Education") Education education,
                          @RequestParam("skills") String skills,
                          @RequestParam("languages") String languages,
-                         @RequestParam("additionalInformation") String additionalInformation) {
+                         @RequestParam("additionalInformation") String additionalInformation,
+                         Model model) {
 
-        if (bindingResult.hasErrors()) {
+        if (bindingResultMainInformation.hasErrors() || skills.isEmpty()) {
+            if (skills.isEmpty()) {
+                model.addAttribute("skillsError", "Поле 'Навыки' не должно быть пустым");
+            }
             return "index";
         }
 
