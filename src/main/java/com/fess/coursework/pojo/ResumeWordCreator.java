@@ -15,6 +15,7 @@ import java.util.List;
 
 @Data
 public class ResumeWordCreator {
+    private String wordName;
     private Resume resume;
 
     public ResumeWordCreator(Resume resume) {
@@ -152,7 +153,8 @@ public class ResumeWordCreator {
         additionalInformationRun.setFontFamily("Times New Roman");
 
         try {
-            FileOutputStream outputStream = new FileOutputStream("F://Coursework//out//" + wordSetFullName() + "_резюме.docx");
+            wordName = "resume.docx";
+            FileOutputStream outputStream = new FileOutputStream("F://Coursework//out//" + wordName);
             document.write(outputStream);
             outputStream.close();
         } catch (IOException e) {

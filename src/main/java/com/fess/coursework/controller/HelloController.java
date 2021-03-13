@@ -65,6 +65,6 @@ public class HelloController {
         ResumeWordCreator resumeWordCreator = new ResumeWordCreator(resume);
         resumeWordCreator.create();
 
-        return "redirect:/";
+        return "redirect:/download/file/resume.docx";
     }
 }
