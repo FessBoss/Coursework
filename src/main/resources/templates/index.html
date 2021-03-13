@@ -248,6 +248,8 @@
                             <button id="addRowLanguages" type="button" class="btn btn-info">Добавить</button>
                         </div>
                     </div>
+                    <div th:if="${languagesError}" th:text="${languagesError}"
+                         class="alert alert-danger mt-2" role="alert"></div>
                 </div>
             </div>
         </div>

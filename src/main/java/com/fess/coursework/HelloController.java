@@ -39,10 +39,15 @@ public class HelloController {
         if (bindingResultMainInformation.hasErrors() ||
                 (bindingResultExperience.hasErrors() && !experience.checkExperience()) ||
                 (bindingResultEducation.hasErrors() && !education.checkEducation()) ||
-                skills.isEmpty()) {
+                skills.isEmpty() ||
+                languages == null) {
 
             if (skills.isEmpty()) {
                 model.addAttribute("skillsError", "Поле 'Навыки' не должно быть пустым");
+            }
+
+            if (languages == null) {
+                model.addAttribute("languagesError", "Выберите хотя бы один язык");
             }
 
             return "index";
