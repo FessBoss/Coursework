@@ -133,8 +133,14 @@
                     <div id="inputFormRowEducation">
                         <div class="form-group mt-3">
                             <input type="text" th:field="${Education.university}" class="form-control" placeholder="Учебное заведение"/>
+                            <div th:if="${#fields.hasErrors('Education.university')}" th:errors="${Education.university}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <input type="text" th:field="${Education.faculty}" class="form-control mt-2" placeholder="Факультет"/>
+                            <div th:if="${#fields.hasErrors('Education.faculty')}" th:errors="${Education.faculty}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <input type="text" th:field="${Education.specialty}" class="form-control mt-2" placeholder="Специальность"/>
+                            <div th:if="${#fields.hasErrors('Education.specialty')}" th:errors="${Education.specialty}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                         </div>
                         <div>
                             <label class="my-1 mr-2">Год начала обучения</label>
@@ -166,6 +172,8 @@
                                 <option value="2023">2022</option>
                                 <option value="2024">2022</option>
                             </select>
+                            <div th:if="${#fields.hasErrors('Education.startStudy')}" th:errors="${Education.startStudy}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
 
                             <label class="my-1 mr-2">Год окончания обучения</label>
                             <select class="custom-select my-1 mr-sm-2 col-lg-2" id="endStudy" th:field="${Education.endStudy}">
@@ -196,6 +204,8 @@
                                 <option value="2023">2022</option>
                                 <option value="2024">2022</option>
                             </select>
+                            <div th:if="${#fields.hasErrors('Education.endStudy')}" th:errors="${Education.endStudy}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <button id="removeRowEducation" type="button" class="btn btn-danger">Удалить</button>
                         </div>
                     </div>

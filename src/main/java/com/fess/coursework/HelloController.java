@@ -29,7 +29,8 @@ public class HelloController {
                          BindingResult bindingResultMainInformation,
                          @ModelAttribute("Experience") @Valid Experience experience,
                          BindingResult bindingResultExperience,
-                         @ModelAttribute("Education") Education education,
+                         @ModelAttribute("Education") @Valid Education education,
+                         BindingResult bindingResultEducation,
                          @RequestParam("skills") String skills,
                          @RequestParam(value = "languages", required = false) String languages,
                          @RequestParam("additionalInformation") String additionalInformation,
@@ -37,12 +38,12 @@ public class HelloController {
 
         if (bindingResultMainInformation.hasErrors() ||
                 (bindingResultExperience.hasErrors() && !experience.checkExperience()) ||
+                (bindingResultEducation.hasErrors() && !education.checkEducation()) ||
                 skills.isEmpty()) {
 
             if (skills.isEmpty()) {
                 model.addAttribute("skillsError", "Поле 'Навыки' не должно быть пустым");
             }
-
 
             return "index";
         }
