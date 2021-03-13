@@ -90,16 +90,26 @@
                             <div class="col-4">
                                 <label>Устроился</label>
                                 <input type="date" class="form-control" id="date1" th:field="${Experience.dateStart}" placeholder="Дата">
+                                <div th:if="${#fields.hasErrors('Experience.dateStart')}" th:errors="${Experience.dateStart}"
+                                     class="alert alert-danger mt-2" role="alert"></div>
                             </div>
                             <div class="col-4">
                                 <label>Уволился</label>
                                 <input type="date" class="form-control" id="date2" th:field="${Experience.dateEnd}" placeholder="Дата">
+                                <div th:if="${#fields.hasErrors('Experience.dateEnd')}" th:errors="${Experience.dateEnd}"
+                                     class="alert alert-danger mt-2" role="alert"></div>
                             </div>
                         </div>
                         <div class="form-group mt-3">
                             <input type="text" th:field="${Experience.position}" class="form-control" placeholder="Должность"/>
+                            <div th:if="${#fields.hasErrors('Experience.position')}" th:errors="${Experience.position}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <input type="text" th:field="${Experience.organization}" class="form-control mt-2" placeholder="Организация"/>
+                            <div th:if="${#fields.hasErrors('Experience.organization')}" th:errors="${Experience.organization}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                             <textarea th:field="${Experience.responsibility}" class="form-control mt-2" placeholder="Должностные обязанности"></textarea>
+                            <div th:if="${#fields.hasErrors('Experience.responsibility')}" th:errors="${Experience.responsibility}"
+                                 class="alert alert-danger mt-2" role="alert"></div>
                         </div>
                         <div class="mt-1 mb-2">
                             <button id="removeRowExperience" type="button" class="btn btn-danger">Удалить</button>

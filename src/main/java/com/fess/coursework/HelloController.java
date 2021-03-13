@@ -27,17 +27,23 @@ public class HelloController {
     @PostMapping("/create")
     public String create(@ModelAttribute("MainInformation") @Valid MainInformation mainInformation,
                          BindingResult bindingResultMainInformation,
-                         @ModelAttribute("Experience") Experience experience,
+                         @ModelAttribute("Experience") @Valid Experience experience,
+                         BindingResult bindingResultExperience,
                          @ModelAttribute("Education") Education education,
                          @RequestParam("skills") String skills,
-                         @RequestParam("languages") String languages,
+                         @RequestParam(value = "languages", required = false) String languages,
                          @RequestParam("additionalInformation") String additionalInformation,
                          Model model) {
 
-        if (bindingResultMainInformation.hasErrors() || skills.isEmpty()) {
+        if (bindingResultMainInformation.hasErrors() ||
+                (bindingResultExperience.hasErrors() && !experience.checkExperience()) ||
+                skills.isEmpty()) {
+
             if (skills.isEmpty()) {
                 model.addAttribute("skillsError", "Поле 'Навыки' не должно быть пустым");
             }
+
+
             return "index";
         }
 
