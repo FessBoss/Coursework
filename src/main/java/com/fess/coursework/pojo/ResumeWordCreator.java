@@ -152,7 +152,7 @@ public class ResumeWordCreator {
         additionalInformationRun.setFontFamily("Times New Roman");
 
         try {
-            FileOutputStream outputStream = new FileOutputStream("text.docx");
+            FileOutputStream outputStream = new FileOutputStream("F://Coursework//out//" + wordSetFullName() + "_резюме.docx");
             document.write(outputStream);
             outputStream.close();
         } catch (IOException e) {

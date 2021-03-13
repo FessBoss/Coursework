@@ -1,4 +1,4 @@
-package com.fess.coursework;
+package com.fess.coursework.controller;
 
 import com.fess.coursework.pojo.*;
 import org.springframework.stereotype.Controller;
@@ -64,23 +64,6 @@ public class HelloController {
 
         ResumeWordCreator resumeWordCreator = new ResumeWordCreator(resume);
         resumeWordCreator.create();
-
-        System.out.println(resume.getMainInformation());
-        System.out.println("!==============================================================================!");
-
-        System.out.println(resume.getSkills());
-        System.out.println("!==============================================================================!");
-
-        System.out.println(resume.getExperiences());
-        System.out.println("!==============================================================================!");
-
-        System.out.println(resume.getEducations());
-        System.out.println("!==============================================================================!");
-
-        System.out.println(resume.getLanguages());
-        System.out.println("!==============================================================================!");
-
-        System.out.println(resume.getAdditionalInformation());
 
         return "redirect:/";
     }

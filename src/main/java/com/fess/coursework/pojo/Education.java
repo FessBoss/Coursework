@@ -26,6 +26,8 @@ public class Education {
     @NotEmpty(message = "Выберите конец обучения")
     private String endStudy;
 
+    private boolean hasEducation = true;
+
     public boolean checkEducation() {
         return university == null && faculty == null && specialty == null && startStudy == null && endStudy == null;
     }

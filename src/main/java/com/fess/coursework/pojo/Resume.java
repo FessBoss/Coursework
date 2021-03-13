@@ -97,7 +97,7 @@ public class Resume {
                     }
                 }
             } catch (NullPointerException e) {
-                e.printStackTrace();
+                educations.setHasEducation(false);
             }
 
             return this;
